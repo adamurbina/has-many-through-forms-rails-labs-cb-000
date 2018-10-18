@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
+    @user_options = User.all.map{|u| [u.username, u.id]}
   end
 
   def index
